@@ -148,6 +148,6 @@ Introduce tu nombre y selecciona tus respuestas a continuación. Haz clic en "En
 
 quarto::quarto_render("densidad-presion.qmd", output_file = "index.html")
 <!--git add index.html
-git commit -m "Corrijo rutas a recursos"
+git commit -m "grego test de 10 preguntas"
 git push -->
 
