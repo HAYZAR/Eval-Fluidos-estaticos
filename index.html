@@ -1,36 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Evaluación de Física: Densidad y Presión</title>
-<style>
-    body { font-family: sans-serif; max-width: 900px; margin: auto; padding: 20px; background: #f9f9f9; }
-    h1, h2 { text-align: center; }
-    .encabezado { text-align: center; margin-bottom: 20px; }
-    .pregunta { background: #fff; padding: 15px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);}
-    button { padding: 12px 25px; font-size: 1em; background: #007acc; color: white; border: none; border-radius: 8px; cursor: pointer; }
-    button:hover { background: #005e99; }
-    #resultado { font-weight: bold; color: green; margin-top: 20px; text-align: center; }
+  <meta charset="UTF-8">
+  <title>Evaluación de Física: Densidad y Presión</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      background: #eef7ff;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #004080;
+      margin-bottom: 5px;
+    }
+    h2.fecha {
+      text-align: center;
+      font-size: 1em;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    .encabezado img {
+      display: block;
+      max-width: 400px;
+      margin: 0 auto 20px;
+      border-bottom: 2px solid #004080;
+      padding-bottom: 10px;
+    }
+    p.instrucciones {
+      text-align: justify;
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+    .pregunta {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .pregunta img {
+      display: block;
+      max-width: 300px;
+      margin: 10px auto;
+    }
+    .competencia {
+      font-style: italic;
+      color: #555;
+    }
+    button {
+      display: block;
+      margin: 30px auto;
+      padding: 12px 30px;
+      font-size: 1em;
+      background: #007acc;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #005e99;
+    }
+    #resultado {
+      text-align: center;
+      font-weight: bold;
+      color: green;
+      margin-top: 20px;
+      font-size: 1.2em;
+    }
+    #feedback {
+      text-align: center;
+      font-style: italic;
+      color: #444;
+      margin-top: 10px;
+    }
+    input[type="text"] {
+      margin-bottom: 10px;
+      padding: 5px;
+      width: 200px;
+    }
   </style>
-
 </head>
 <body>
-  
-  <body>
-<div style="text-align: center;">
-    <img src="Encab_Taller_Physics_Rosales.svg" alt="Encabezado Taller Physics Rosales" style="max-width: 100%; height: auto;">
+
+<div class="encabezado">
+  <img src="Encab_Taller_Physics_Rosales.svg" alt="Encabezado Taller Physics Rosales">
 </div>
 
-  
 <h1>Evaluación de Física: Densidad y Presión</h1>
-<p><strong>Instrucciones:</strong> Escribe tu nombre y grado, luego responde las preguntas. Haz clic en "Enviar" al final.</p>
+<h2 class="fecha">Fecha límite de entrega: 10 de Mayo</h2>
+
+<p class="instrucciones"><strong>Instrucciones:</strong> Escribe tu nombre y grado, luego responde las preguntas. Haz clic en "Enviar" al final.</p>
 
 <label>Nombre: <input type="text" id="nombre"></label><br>
 <label>Grado: <input type="text" id="grado"></label>
 
-<hr>
-
 <form id="quizForm">
+
 
 <div class="pregunta">
     <p>1. La densidad es una propiedad característica de la materia que relaciona la masa de una sustancia con el volumen que ocupa. ¿Cuál de las siguientes expresiones representa correctamente la definición de densidad (ρ)?</p>
@@ -123,43 +194,55 @@
     <input type="radio" name="p10" value="D"> D. 50 Pa<br>
 </div>
 
-<button type="button" onclick="enviarRespuestas()">Enviar</button>
+
+  <button type="button" onclick="enviarRespuestas()">Enviar</button>
+</form>
 
 <p id="resultado"></p>
+<p id="feedback"></p>
 
 <script>
-    const respuestasCorrectas = {p1:"A", p2:"C", p3:"B", p4:"C", p5:"B", p6:"C", p7:"C", p8:"D", p9:"B", p10:"C"};
+  const respuestasCorrectas = {p1:"A", p2:"C", p3:"B", p4:"C", p5:"B", p6:"C", p7:"C", p8:"D", p9:"B", p10:"C"};
 
-    function enviarRespuestas() {
-        let puntaje = 0;
-        let respuestas = {};
-        for (let key in respuestasCorrectas) {
-            let seleccion = document.querySelector(`input[name=${key}]:checked`);
-            respuestas[key] = seleccion ? seleccion.value : "";
-            if (seleccion && seleccion.value === respuestasCorrectas[key]) {
-                puntaje++;
-            }
-        }
-        let nombre = document.getElementById('nombre').value;
-        let grado = document.getElementById('grado').value;
-
-        document.getElementById("resultado").innerText = `Obtuviste ${puntaje}/10. Nota: ${(puntaje*5/10).toFixed(2)}`;
-
-        // Enviar a Google Sheets
-        fetch("https://script.google.com/macros/s/AKfycbxgknA-nfy8CXCp9zskVU78N4gZqT-DvN9kqJRYU77r6wGw1mLPmLW2jax-hU7KOFnqPA/exec", {
-            method: "POST",
-            mode: "no-cors",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                Timestamp: new Date().toLocaleString(),
-                Nombre: nombre,
-                Grado: grado,
-                p1: respuestas.p1, p2: respuestas.p2, p3: respuestas.p3, p4: respuestas.p4, p5: respuestas.p5,
-                p6: respuestas.p6, p7: respuestas.p7, p8: respuestas.p8, p9: respuestas.p9, p10: respuestas.p10,
-                Puntaje: puntaje
-            })
-        }).then(() => console.log("Respuestas enviadas"));
+  function enviarRespuestas() {
+    let puntaje = 0;
+    let respuestas = {};
+    for (let key in respuestasCorrectas) {
+      let seleccion = document.querySelector(`input[name=${key}]:checked`);
+      respuestas[key] = seleccion ? seleccion.value : "";
+      if (seleccion && seleccion.value === respuestasCorrectas[key]) {
+        puntaje++;
+      }
     }
+    let nombre = document.getElementById('nombre').value;
+    let grado = document.getElementById('grado').value;
+    let nota = (puntaje * 5 / 10).toFixed(2);
+    
+    document.getElementById("resultado").innerText = `Obtuviste ${puntaje}/10. Nota: ${nota}`;
+    
+    let mensaje = "";
+    if (nota >= 4) {
+      mensaje = "¡Excelente trabajo, sigue así!";
+    } else if (nota >= 3) {
+      mensaje = "Buen esfuerzo, revisa las preguntas incorrectas.";
+    } else {
+      mensaje = "Ánimo, repasa los conceptos y vuelve a intentarlo.";
+    }
+    document.getElementById("feedback").innerText = mensaje;
+
+    fetch("https://script.google.com/macros/s/AKfycbxgknA-nfy8CXCp9zskVU78N4gZqT-DvN9kqJRYU77r6wGw1mLPmLW2jax-hU7KOFnqPA/exec", {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        Timestamp: new Date().toLocaleString(),
+        Nombre: nombre,
+        Grado: grado,
+        ...respuestas,
+        Puntaje: puntaje
+      })
+    }).then(() => console.log("Respuestas enviadas"));
+  }
 </script>
 
 </body>
