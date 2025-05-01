@@ -1,225 +1,161 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Título actualizado -->
-  <title>Evaluación de Física: Presión en Fluidos</title> 
-  <style>
-    body { font-family: sans-serif; max-width: 900px; margin: auto; padding: 20px; background: #f9f9f9; }
-    h1, h2 { text-align: center; }
-    .encabezado { text-align: center; margin-bottom: 20px; }
-    .pregunta { background: #fff; padding: 15px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);}
-    button { padding: 12px 25px; font-size: 1em; background: #007acc; color: white; border: none; border-radius: 8px; cursor: pointer; }
-    button:hover { background: #005e99; }
-    #resultado { font-weight: bold; color: green; margin-top: 20px; text-align: center; }
-  </style>
+    <meta charset="UTF-8">
+    <title>Evaluación de Física: Densidad y Presión</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #2a4b8d; }
+        .pregunta { margin-bottom: 20px; }
+        .competencia { font-weight: bold; font-style: italic; color: #444; }
+    </style>
 </head>
 <body>
 
-  <div class="encabezado">
-    <!-- Mantenemos el mismo encabezado visual -->
-    <img src="Encab_Taller_Physics_Rosales.svg" alt="Encabezado Evaluación Física" style="width: 100%; max-width: 1200px; height: auto;">
-    <!-- Título del H1 actualizado -->
-    <h1>Evaluación de Física: Presión en Fluidos</h1> 
-    <p><strong>Autor:</strong> Hayzar Hernández Bustos – IED Los Rosales</p>
-    <p><strong>Fecha limite de entrega:</strong> 10 de mayo de 2025</p>
-  </div>
-  
-  <!-- Campos de Nombre y Grado (iguales) -->
-  <div class="pregunta">
-    <p>Nombre completo:</p>
-    <input type="text" id="nombre" name="nombre" required>
-  </div>
-  <div class="pregunta">
-    <p>Grado:</p>
-    <input type="text" id="grado" name="grado" required>
-  </div>
+<!-- Encabezado de la página -->
+<div style="text-align: center;">
+    <img src="Encab_Taller_Physics_Rosales.svg" alt="Encabezado Taller Physics Rosales" style="max-width: 100%; height: auto;">
+</div>
 
-  <h2>Responda seleccionando una única opción por pregunta</h2>
+<h1>Evaluación de Física: Densidad y Presión</h1>
+<p><strong>Instrucciones:</strong> Escribe tu nombre y grado, luego responde las preguntas. Haz clic en "Enviar" al final.</p>
 
-  <form id="formulario">
-    <!-- Pregunta 1 (Presión Fluidos) -->
-    <div class="pregunta">
-      <p><strong>Competencia:</strong> Explicación de Fenómenos (EF)</p>
-      <p>1. Un submarino sube de 50m a 20m de profundidad. ¿Qué sucede con la presión hidrostática que experimenta?</p>
-      <input type="radio" name="p1" value="a"> Aumenta<br>
-      <input type="radio" name="p1" value="b"> Disminuye<br>
-      <input type="radio" name="p1" value="c"> Permanece igual<br>
-      <input type="radio" name="p1" value="d"> Depende de la presión atmosférica<br>
-    </div>
 
-    <!-- Pregunta 2 (Presión Fluidos) -->
-    <div class="pregunta">
-      <p><strong>Competencia:</strong> Indagación (I)</p>
-      <p>2. Dos líquidos (agua ρ₁ y aceite ρ₂, ρ₂ &lt; ρ₁) llenan recipientes idénticos a la misma altura h. Compara las presiones P₁ y P₂ en el fondo.</p>
-      <input type="radio" name="p2" value="a"> P₁ &lt; P₂<br>
-      <input type="radio" name="p2" value="b"> P₁ = P₂<br>
-      <input type="radio" name="p2" value="c"> P₁ &gt; P₂<br>
-      <input type="radio" name="p2" value="d"> No se puede determinar<br>
-    </div>
+<label>Nombre: <input type="text" id="nombre"></label><br>
+<label>Grado: <input type="text" id="grado"></label>
 
-    <!-- Pregunta 3 (Presión Fluidos) -->
-    <div class="pregunta">
-      <p><strong>Competencia:</strong> Uso Comprensivo del Conocimiento Científico (UCcC)</p>
-      <p>3. ¿De qué factores principales depende la presión en un punto dentro de un fluido en reposo?</p>
-      <input type="radio" name="p3" value="a"> Forma del recipiente, temperatura, densidad<br>
-      <input type="radio" name="p3" value="b"> Presión atmosférica, profundidad, densidad<br>
-      <input type="radio" name="p3" value="c"> Volumen del fluido, profundidad, gravedad<br>
-      <input type="radio" name="p3" value="d"> Masa del fluido, área, temperatura<br>
-    </div>
+<hr>
 
-    <!-- Pregunta 4 (Presión Fluidos) -->
-    <div class="pregunta">
-      <p><strong>Competencia:</strong> Uso Comprensivo del Conocimiento Científico (UCcC)</p>
-      <p>4. En vasos comunicantes con agua en equilibrio, ¿cómo son los niveles en los tres vasos?</p>
-      <!-- Nota: Añadir imagen real aquí si es posible -->
-      <p><em>(Imagine vasos comunicantes de distintas formas)</em></p> 
-      <input type="radio" name="p4" value="a"> Más alto en el vaso estrecho<br>
-      <input type="radio" name="p4" value="b"> Más alto en el vaso ancho<br>
-      <input type="radio" name="p4" value="c"> Iguales en los tres vasos<br>
-      <input type="radio" name="p4" value="d"> Depende del volumen total<br>
-    </div>
+<form id="quizForm">
 
-    <!-- Pregunta 5 (Presión Fluidos) -->
-    <div class="pregunta">
-      <p><strong>Competencia:</strong> Uso Comprensivo del Conocimiento Científico (UCcC)</p>
-      <p>5. El principio de Pascal establece que un cambio de presión en un fluido encerrado se transmite...</p>
-      <input type="radio" name="p5" value="a"> ... solo hacia el fondo.<br>
-      <input type="radio" name="p5" value="b"> ... principalmente a las paredes.<br>
-      <input type="radio" name="p5" value="c"> ... con igual intensidad en todas direcciones y puntos.<br>
-      <input type="radio" name="p5" value="d"> ... disminuyendo con la distancia.<br>
-    </div>
+<div class="pregunta">
+    <p>1. La densidad es una propiedad característica de la materia que relaciona la masa de una sustancia con el volumen que ocupa. ¿Cuál de las siguientes expresiones representa correctamente la definición de densidad (ρ)?</p>
+    <p class="competencia">Competencia: Uso Comprensivo del Conocimiento Científico (UCcC)</p>
+    <input type="radio" name="p1" value="A"> A. ρ = Masa / Volumen<br>
+    <input type="radio" name="p1" value="B"> B. ρ = Volumen / Masa<br>
+    <input type="radio" name="p1" value="C"> C. ρ = Masa × Volumen<br>
+    <input type="radio" name="p1" value="D"> D. ρ = Masa + Volumen<br>
+</div>
 
-    <!-- Pregunta 6 (Presión Fluidos) -->
-    <div class="pregunta">
-      <p><strong>Competencia:</strong> Explicación de Fenómenos (EF)</p>
-      <p>6. El funcionamiento de la prensa hidráulica se basa en que:</p>
-      <input type="radio" name="p6" value="a"> La fuerza se transmite íntegramente.<br>
-      <input type="radio" name="p6" value="b"> Pequeña fuerza en área pequeña genera gran fuerza en área grande.<br>
-      <input type="radio" name="p6" value="c"> El fluido reduce la fricción.<br>
-      <input type="radio" name="p6" value="d"> La presión disminuye al pasar al pistón grande.<br>
-    </div>
+<div class="pregunta">
+    <p>2. Un estudiante tiene dos cubos sólidos, X e Y, del mismo tamaño. X tiene mayor masa que Y. ¿Qué puede concluir?</p>
+    <p class="competencia">Competencia: Indagación (I)</p>
+    <input type="radio" name="p2" value="A"> A. La densidad de X es menor<br>
+    <input type="radio" name="p2" value="B"> B. La densidad de X es igual<br>
+    <input type="radio" name="p2" value="C"> C. La densidad de X es mayor<br>
+    <input type="radio" name="p2" value="D"> D. No se puede determinar<br>
+</div>
 
-    <!-- Pregunta 7 (Presión Fluidos) -->
-    <div class="pregunta">
-      <p><strong>Competencia:</strong> Indagación (I)</p>
-      <p>7. En una prensa hidráulica A₂ = 5A₁. Si aplicas F₁ en A₁, ¿cuál es la fuerza F₂ en A₂?</p>
-      <input type="radio" name="p7" value="a"> F₂ = F₁ / 5<br>
-      <input type="radio" name="p7" value="b"> F₂ = F₁<br>
-      <input type="radio" name="p7" value="c"> F₂ = 5 F₁<br>
-      <input type="radio" name="p7" value="d"> F₂ = 25 F₁<br>
-    </div>
+<div class="pregunta">
+    <p>3. La presión es fuerza sobre área. Si la misma fuerza F se aplica sobre A₁ y A₂ (A₂ < A₁), ¿dónde es mayor la presión?</p>
+    <p class="competencia">Competencia: Explicación de Fenómenos (EF)</p>
+    <input type="radio" name="p3" value="A"> A. Mayor en A₁<br>
+    <input type="radio" name="p3" value="B"> B. Mayor en A₂<br>
+    <input type="radio" name="p3" value="C"> C. Igual en ambas<br>
+    <input type="radio" name="p3" value="D"> D. No depende del área<br>
+</div>
 
-    <!-- Pregunta 8 (Presión Fluidos) -->
-    <div class="pregunta">
-      <p><strong>Competencia:</strong> Explicación de Fenómenos (EF)</p>
-      <p>8. ¿Por qué un buzo siente dolor en los oídos al descender rápidamente?</p>
-      <input type="radio" name="p8" value="a"> Por disminución de temperatura.<br>
-      <input type="radio" name="p8" value="b"> Por aumento de salinidad.<br>
-      <input type="radio" name="p8" value="c"> Porque la presión exterior supera rápidamente a la interior del oído.<br>
-      <input type="radio" name="p8" value="d"> Porque la presión atmosférica disminuye.<br>
-    </div>
+<div class="pregunta">
+    <p>4. Un ladrillo se apoya sobre distintas caras. ¿Dónde ejerce mayor presión?</p>
+    <p class="competencia">Competencia: Explicación de Fenómenos (EF)</p>
+    <input type="radio" name="p4" value="A"> A. Cara más ancha<br>
+    <input type="radio" name="p4" value="B"> B. Cara media<br>
+    <input type="radio" name="p4" value="C"> C. Cara más estrecha<br>
+    <input type="radio" name="p4" value="D"> D. Igual en todas<br>
+</div>
 
-    <!-- Pregunta 9 (Presión Fluidos) -->
-    <div class="pregunta">
-      <p><strong>Competencia:</strong> Indagación (I)</p>
-      <p>9. En un manómetro en U, si el mercurio está más alto en la rama conectada al gas que en la abierta a la atmósfera, la presión del gas es:</p>
-      <!-- Nota: Añadir imagen real aquí si es posible -->
-      <p><em>(Imagine un manómetro en U en esa configuración)</em></p> 
-      <input type="radio" name="p9" value="a"> Mayor que la atmosférica.<br>
-      <input type="radio" name="p9" value="b"> Igual a la atmosférica.<br>
-      <input type="radio" name="p9" value="c"> Menor que la atmosférica.<br>
-      <input type="radio" name="p9" value="d"> Imposible determinar sin la temperatura.<br>
-    </div>
+<div class="pregunta">
+    <p>5. ¿Cómo varía la presión atmosférica con la altitud?</p>
+    <p class="competencia">Competencia: Uso Comprensivo del Conocimiento Científico (UCcC)</p>
+    <input type="radio" name="p5" value="A"> A. Aumenta<br>
+    <input type="radio" name="p5" value="B"> B. Disminuye<br>
+    <input type="radio" name="p5" value="C"> C. Permanece constante<br>
+    <input type="radio" name="p5" value="D"> D. Varía impredeciblemente<br>
+</div>
 
-    <!-- Pregunta 10 (Presión Fluidos) -->
-    <div class="pregunta">
-      <p><strong>Competencia:</strong> Indagación (I)</p>
-      <p>10. Un objeto se sumerge a la misma profundidad en agua (más densa) y aceite (menos denso). ¿Dónde es mayor la presión sobre su cara superior?</p>
-      <input type="radio" name="p10" value="a"> En el aceite.<br>
-      <input type="radio" name="p10" value="b"> En el agua.<br>
-      <input type="radio" name="p10" value="c"> Igual en ambos.<br>
-      <input type="radio" name="p10" value="d"> Depende de la forma.<br>
-    </div>
+<div class="pregunta">
+    <p>6. ¿Cuál combinación representa un Pascal (Pa)?</p>
+    <p class="competencia">Competencia: Uso Comprensivo del Conocimiento Científico (UCcC)</p>
+    <input type="radio" name="p6" value="A"> A. N/m<br>
+    <input type="radio" name="p6" value="B"> B. kg/m³<br>
+    <input type="radio" name="p6" value="C"> C. N/m²<br>
+    <input type="radio" name="p6" value="D"> D. J/s<br>
+</div>
 
-    <!-- Botón y div resultado (iguales) -->
-    <button type="button" onclick="evaluar()">Enviar respuestas</button>
-  </form>
+<div class="pregunta">
+    <p>7. ¿Por qué aumenta la presión al sumergirse un buzo?</p>
+    <p class="competencia">Competencia: Explicación de Fenómenos (EF)</p>
+    <input type="radio" name="p7" value="A"> A. Por aumento de densidad<br>
+    <input type="radio" name="p7" value="B"> B. Por menor temperatura<br>
+    <input type="radio" name="p7" value="C"> C. Por mayor peso de columna de agua<br>
+    <input type="radio" name="p7" value="D"> D. Por menor presión atmosférica<br>
+</div>
 
-  <div id="resultado"></div>
+<div class="pregunta">
+    <p>8. Tres recipientes con diferentes formas contienen el mismo líquido a la misma altura (h). ¿Cómo es la presión en el fondo?</p>
+    <img src="vasos-comunicantes.png" alt="Vasos comunicantes" width="300">
+    <p class="competencia">Competencia: Indagación (I)</p>
+    <input type="radio" name="p8" value="A"> A. Mayor en el cilíndrico<br>
+    <input type="radio" name="p8" value="B"> B. Mayor en el ancho<br>
+    <input type="radio" name="p8" value="C"> C. Mayor en el estrecho<br>
+    <input type="radio" name="p8" value="D"> D. Igual en los tres<br>
+</div>
+
+<div class="pregunta">
+    <p>9. Un objeto de 200g ocupa 50cm³. ¿Cuál es su densidad?</p>
+    <p class="competencia">Competencia: Indagación (I)</p>
+    <input type="radio" name="p9" value="A"> A. 0.25 g/cm³<br>
+    <input type="radio" name="p9" value="B"> B. 4 g/cm³<br>
+    <input type="radio" name="p9" value="C"> C. 10000 g/cm³<br>
+    <input type="radio" name="p9" value="D"> D. 150 g/cm³<br>
+</div>
+
+<div class="pregunta">
+    <p>10. Una fuerza de 50N se aplica sobre una superficie de 2m de lado. ¿Cuál es la presión?</p>
+    <p class="competencia">Competencia: Indagación (I)</p>
+    <input type="radio" name="p10" value="A"> A. 25 Pa<br>
+    <input type="radio" name="p10" value="B"> B. 100 Pa<br>
+    <input type="radio" name="p10" value="C"> C. 12.5 Pa<br>
+    <input type="radio" name="p10" value="D"> D. 50 Pa<br>
+</div>
+
+<button type="button" onclick="enviarRespuestas()">Enviar</button>
+
+<p id="resultado"></p>
 
 <script>
-  function evaluar() {
-    // **Respuestas Correctas ACTUALIZADAS para Presión en Fluidos**
-    const respuestasCorrectas = { 
-      p1:'b', p2:'c', p3:'b', p4:'c', p5:'c', 
-      p6:'b', p7:'c', p8:'c', p9:'c', p10:'b' 
-    };
-    let puntaje = 0;
-    let datos = {};
+    const respuestasCorrectas = {p1:"A", p2:"C", p3:"B", p4:"C", p5:"B", p6:"C", p7:"C", p8:"D", p9:"B", p10:"C"};
 
-    // Capturar nombre y grado (igual)
-    const nombre = document.getElementById("nombre").value.trim();
-    const grado = document.getElementById("grado").value.trim();
-
-    if (!nombre || !grado) {
-      alert("Por favor completa tu nombre y grado antes de enviar.");
-      return;
-    }
-
-    datos['nombre'] = nombre;
-    datos['grado'] = grado;
-    datos['evaluacion'] = 'Presion en Fluidos'; // Añadido para identificar la evaluación
-
-    // Capturar respuestas y calcular puntaje (igual)
-    for (let key in respuestasCorrectas) {
-      const seleccion = document.querySelector(`input[name="${key}"]:checked`);
-      if (seleccion) {
-        datos[key] = seleccion.value; // Guarda la letra seleccionada 'a', 'b', 'c' o 'd'
-        if (seleccion.value === respuestasCorrectas[key]) {
-          puntaje++;
+    function enviarRespuestas() {
+        let puntaje = 0;
+        let respuestas = {};
+        for (let key in respuestasCorrectas) {
+            let seleccion = document.querySelector(`input[name=${key}]:checked`);
+            respuestas[key] = seleccion ? seleccion.value : "";
+            if (seleccion && seleccion.value === respuestasCorrectas[key]) {
+                puntaje++;
+            }
         }
-      } else {
-        datos[key] = ''; // Guarda vacío si no respondió
-      }
+        let nombre = document.getElementById('nombre').value;
+        let grado = document.getElementById('grado').value;
+
+        document.getElementById("resultado").innerText = `Obtuviste ${puntaje}/10. Nota: ${(puntaje*5/10).toFixed(2)}`;
+
+        // Enviar a Google Sheets
+        fetch("https://script.google.com/macros/s/AKfycbxgknA-nfy8CXCp9zskVU78N4gZqT-DvN9kqJRYU77r6wGw1mLPmLW2jax-hU7KOFnqPA/exec", {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                Timestamp: new Date().toLocaleString(),
+                Nombre: nombre,
+                Grado: grado,
+                p1: respuestas.p1, p2: respuestas.p2, p3: respuestas.p3, p4: respuestas.p4, p5: respuestas.p5,
+                p6: respuestas.p6, p7: respuestas.p7, p8: respuestas.p8, p9: respuestas.p9, p10: respuestas.p10,
+                Puntaje: puntaje
+            })
+        }).then(() => console.log("Respuestas enviadas"));
     }
-
-    datos['puntaje'] = puntaje; // Guarda el puntaje numérico (0-10)
-    
-    // Calcular nota sobre 5 (opcional, si quieres enviarla también)
-    const notaSobre5 = (puntaje / 10) * 5;
-    datos['nota_sobre_5'] = notaSobre5.toFixed(2); // Guarda la nota con 2 decimales
-
-    // Añadir Timestamp
-    datos['timestamp'] = new Date().toISOString();
-
-
-    // Mostrar puntaje en pantalla (igual)
-    document.getElementById("resultado").innerHTML = `Tu puntaje es: ${puntaje} / 10. Nota (0-5): ${notaSobre5.toFixed(2)}`;
-
-    // Enviar a Google Sheets (misma URL, asumiendo que está preparada para recibir de ambas)
-    // **Importante**: Se añadió 'evaluacion' y 'nota_sobre_5' a los datos enviados.
-    // Asegúrate que tu Google Apps Script esté preparado para recibir y almacenar estos campos.
-    fetch('https://script.google.com/macros/s/AKfycbx0AErvOM52GcYIAUEtD2WiA7XXHGpTyUUhLPvg011kA0zKJJbfZMS4iGK4jl8P5BkZ5w/exec', {
-      method: 'POST',
-      mode: 'no-cors', // no-cors es necesario para evitar errores CORS con Google Apps Script si no se configura respuesta JSONP
-      cache: 'no-cache', // Evitar cache
-      redirect: 'follow', // Seguir redirecciones
-      referrerPolicy: 'no-referrer', // No enviar info de referrer
-      body: JSON.stringify(datos) // Enviar como JSON string
-    })
-    .then(() => {
-        console.log("Datos enviados (o intento realizado con no-cors).");
-        // Podrías deshabilitar el botón aquí para evitar reenvíos
-        // document.querySelector('button').disabled = true; 
-        alert("Respuestas enviadas correctamente. Tu puntaje es: " + puntaje + "/10. Nota: " + notaSobre5.toFixed(2));
-    })
-    .catch(error => {
-        console.error('Error al enviar datos:', error);
-        alert('Hubo un error al enviar tus respuestas. Por favor, inténtalo de nuevo o contacta al profesor.');
-    });
-  }
 </script>
 
 </body>
