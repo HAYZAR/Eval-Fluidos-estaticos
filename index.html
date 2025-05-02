@@ -237,10 +237,10 @@
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         Timestamp: new Date().toLocaleString(),
-        Nombre: nombre,
-        Grado: grado,
+        nombre: nombre,
+        grado: grado,
         ...respuestas,
-        Puntaje: puntaje
+        puntaje: puntaje
       })
     }).then(() => console.log("Respuestas enviadas"));
   }
